@@ -10,7 +10,7 @@ body{
 
 .add-card-info{
   background-color: #608b9e;
-  height: 25rem;
+  height: 20rem;
   width: 100%;
   margin: 0 auto;
   margin-top: 0;
@@ -18,25 +18,13 @@ body{
 }
 
 .card-entry-div{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  background-color: green;
-  width: 70%;
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  background-color: #608b9e;
   margin: 0 auto;
 }
 
-.idea-title{
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0 auto;
-  color: orange;
-}
-
-.idea-description{
-  grid-column: 1;
-  grid-row: 2;
-}
 
 .title-input{
   grid-column: 2;
