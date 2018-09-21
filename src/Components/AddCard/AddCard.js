@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './addcard.css';
 import Card from '../Cards/Card';
+import Search from '../Search/Search';
+
 
 export default class AddCard extends Component{
   constructor(){
@@ -9,7 +11,8 @@ export default class AddCard extends Component{
     this.state = {
       title: '',
       description: '',
-      cardAdded: false
+      cardAdded: false,
+      key: Date.now()
     }
 
     this.addCard = this.addCard.bind(this);
@@ -44,6 +47,7 @@ export default class AddCard extends Component{
         </div>
 
         <button className="card-button" onClick={(event)=>{
+          event.preventDefault();
           console.log('clickedd')
           this.setState({
             cardAdded: true,
@@ -54,8 +58,9 @@ export default class AddCard extends Component{
 
         {this.state.cardAdded ? <Card title={this.state.title} description={this.state.description}/> : null}
 
-
       </section>
+
+
     )
   }
 
