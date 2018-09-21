@@ -2,26 +2,55 @@ body{
   margin: 0;
 }
 
-.add-card-info{
-  background-color: blue;
-  height: 17.8rem;
-  width: 100%;
-  margin: 0 auto;
+.header-title{
+  margin-top: 0;
+  padding-top: 20px;
+  font-size: 5rem;
 }
 
-.idea-title, .idea-description{
-  display: flex;
-  justify-content: space-around;
-  width: 20rem;
+.add-card-info{
+  background-color: #608b9e;
+  height: 25rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.card-entry-div{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: green;
+  width: 70%;
   margin: 0 auto;
 }
 
 .idea-title{
-  padding-top: 5rem;
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 auto;
+  color: orange;
 }
 
-.card-entry-div{
-  background-color: yellow;
-  width: 50%;
-  margin: 0 auto;
+.idea-description{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.title-input{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.description-input{
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.card-button{
+  height: 50px;
+  width: 30rem;
+  margin-top: 10px;
+  background-color: orange;
 }

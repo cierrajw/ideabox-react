@@ -25,25 +25,22 @@ export default class AddCard extends Component{
   render(){
     return(
       <section className='add-card-info'>
+      <h1 className="header-title">Idea Box</h1>
         <div className="card-entry-div">
-        <h1 className="header-title">Idea Box</h1>
-          <div className="idea-title"><h3>Title</h3><input type="text"
+          <h3 className="idea-title">Title</h3><input className="title-input" type="text"
           onChange={(event)=>{
             this.setState({
               title: event.target.value
             })
           }}/>
-            </div>
-          <div>
 
-          <h3>Description</h3><textarea type="text" className="idea-description"
 
+          <h3 className="idea-description">Description</h3><textarea type="text" className="description-input"
           onChange={(event)=>{
             this.setState({
               description: event.target.value
             })
           }}/>
-          </div>
         </div>
 
         <button className="card-button" onClick={(event)=>{

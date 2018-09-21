@@ -16,12 +16,6 @@
   font-size: large;
 }
 
-.card-button{
-  height: 50px;
-  width: 80px;
-  background-color: yellow;
-}
-
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
