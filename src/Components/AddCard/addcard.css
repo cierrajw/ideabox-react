@@ -1,11 +1,12 @@
-.add-card-info{
-  background-color: blue;
-  width: 97%;
-  margin: 0 auto;
+body{
+  margin: 0;
 }
 
-.header-title{
-
+.add-card-info{
+  background-color: blue;
+  height: 17.8rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .idea-title, .idea-description{

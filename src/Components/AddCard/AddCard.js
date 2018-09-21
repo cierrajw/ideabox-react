@@ -52,11 +52,12 @@ export default class AddCard extends Component{
             cardAdded: true,
           })
 
+
         }}>Add card</button>
 
-        {this.state.cardAdded && <Card />}
+        {this.state.cardAdded ? <Card title={this.state.title} description={this.state.description}/> : null}
 
-        <Card title={this.state.title} description={this.state.description}/>
+
       </section>
     )
   }
