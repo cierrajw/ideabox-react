@@ -1,26 +1,44 @@
-.add-card-info{
-  background-color: blue;
-  width: 97%;
-  margin: 0 auto;
+body{
+  margin: 0;
 }
 
 .header-title{
-
+  margin-top: 0;
+  padding-top: 20px;
+  font-size: 5rem;
+  color: white;
 }
 
-.idea-title, .idea-description{
-  display: flex;
-  justify-content: space-around;
-  width: 20rem;
+.add-card-info{
+  background-color: #608b9e;
+  height: 20rem;
+  width: 100%;
   margin: 0 auto;
-}
-
-.idea-title{
-  padding-top: 5rem;
+  padding-top: 0;
 }
 
 .card-entry-div{
-  background-color: yellow;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  background-color: #608b9e;
   margin: 0 auto;
+}
+
+
+.title-input{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.description-input{
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.card-button{
+  height: 50px;
+  width: 40rem;
+  margin-top: 10px;
+  background-color: orange;
 }

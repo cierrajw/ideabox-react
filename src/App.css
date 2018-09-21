@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 0;
 }
 
 .App-logo {
@@ -9,16 +10,11 @@
 
 .App-title {
   font-size: 4rem;
+  color: white;
 }
 
 .App-intro {
   font-size: large;
-}
-
-.card-button{
-  height: 50px;
-  width: 80px;
-  background-color: yellow;
 }
 
 @keyframes App-logo-spin {

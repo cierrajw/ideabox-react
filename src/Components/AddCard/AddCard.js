@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './addcard.css';
 import Card from '../Cards/Card';
+import Search from '../Search/Search';
+
 
 export default class AddCard extends Component{
   constructor(){
@@ -9,7 +11,8 @@ export default class AddCard extends Component{
     this.state = {
       title: '',
       description: '',
-      cardAdded: false
+      cardAdded: false,
+      key: Date.now()
     }
 
     this.addCard = this.addCard.bind(this);
@@ -25,39 +28,39 @@ export default class AddCard extends Component{
   render(){
     return(
       <section className='add-card-info'>
+      <h1 className="header-title">Idea Box</h1>
         <div className="card-entry-div">
-        <h1 className="header-title">Idea Box</h1>
-          <div className="idea-title"><h3>Title</h3><input type="text"
+          <input className="title-input" value={this.state.title} placeholder="Title" type="text"
           onChange={(event)=>{
             this.setState({
               title: event.target.value
             })
           }}/>
-            </div>
-          <div>
 
-          <h3>Description</h3><textarea type="text" className="idea-description"
 
+         <textarea type="text" className="description-input" value={this.state.description} placeholder="Description"
           onChange={(event)=>{
             this.setState({
               description: event.target.value
             })
           }}/>
-          </div>
         </div>
 
         <button className="card-button" onClick={(event)=>{
+          event.preventDefault();
           console.log('clickedd')
           this.setState({
             cardAdded: true,
           })
 
+
         }}>Add card</button>
 
-        {this.state.cardAdded && <Card />}
+        {this.state.cardAdded ? <Card title={this.state.title} description={this.state.description}/> : null}
 
-        <Card title={this.state.title} description={this.state.description}/>
       </section>
+
+
     )
   }
 
