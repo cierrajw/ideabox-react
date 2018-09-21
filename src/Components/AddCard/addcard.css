@@ -20,7 +20,7 @@ body{
 .card-entry-div{
   display: flex;
   flex-direction: column;
-  width: 30rem;
+  width: 40rem;
   background-color: #608b9e;
   margin: 0 auto;
 }
@@ -38,7 +38,7 @@ body{
 
 .card-button{
   height: 50px;
-  width: 30rem;
+  width: 40rem;
   margin-top: 10px;
   background-color: orange;
 }

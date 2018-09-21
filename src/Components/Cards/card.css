@@ -1,8 +1,8 @@
 
 .card-article{
   margin: 150px auto 10px auto;
-  background-color: red;
-  width: 50%;
+  background-color: #d0e0df;
+  width: 40rem;
   height: 20rem;
   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 61% 75%, 0% 75%);
 }
