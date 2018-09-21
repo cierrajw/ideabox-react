@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import Card from './Components/Cards/Card';
 import AddCard from './Components/AddCard/AddCard';
 import Search from './Components/Search/Search';
+import CardContainer from './Components/CardContainer/CardContainer';
 import './App.css';
-import './index.css';
 
 class App extends Component {
   constructor(){
     super();
 
     this.state = {
-      cardAdded: false,
       cardList: []
     }
 
-    // this.addCard = this.addCard.bind(this);
   }
-  //
-  // addCard(card){
-  //   let addCard = this.props.cardList.slice();
-  //
-  //   addCard.push(card);
-  // }
+
+  addCard = (card) => {
+
+    const newCard = {...card, id: Date.now()}
+
+    this.setState({
+      cardList: [...this.state.cardList, newCard]
+    })
+  }
 
   render() {
 
@@ -30,9 +30,9 @@ class App extends Component {
     return (
       <div className="App">
 
-        <AddCard title={this.state.cardTitle} description={this.state.description} cardList={this.state.cardList}/>
+        <AddCard addCard={this.addCard}/>
         <Search />
-
+        <CardContainer cardList={this.state.cardList}/>
 
       </div>
     );

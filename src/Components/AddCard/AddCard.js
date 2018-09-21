@@ -12,17 +12,8 @@ export default class AddCard extends Component{
       title: '',
       description: '',
       cardAdded: false,
-      key: Date.now()
     }
 
-    this.addCard = this.addCard.bind(this);
-
-  }
-
-  addCard(card){
-    let addCard = this.props.cardList.slice();
-
-    // this.props.cardList.push("oogahboogahhhhhh");
   }
 
   render(){
@@ -48,7 +39,7 @@ export default class AddCard extends Component{
 
         <button className="card-button" onClick={(event)=>{
           event.preventDefault();
-          console.log('clickedd')
+          this.props.addCard(this.state)
           this.setState({
             cardAdded: true,
           })
