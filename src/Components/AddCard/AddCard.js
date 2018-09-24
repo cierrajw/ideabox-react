@@ -11,7 +11,7 @@ export default class AddCard extends Component{
     this.state = {
       title: '',
       description: '',
-      cardAdded: false,
+      id: Date.now(),
     }
 
   }
@@ -40,11 +40,6 @@ export default class AddCard extends Component{
         <button className="card-button" onClick={(event)=>{
           event.preventDefault();
           this.props.addCard(this.state)
-          this.setState({
-            cardAdded: true,
-          })
-
-
         }}>Add card</button>
 
         {this.state.cardAdded ? <Card title={this.state.title} description={this.state.description}/> : null}

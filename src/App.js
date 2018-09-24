@@ -10,19 +10,44 @@ class App extends Component {
     super();
 
     this.state = {
-      cardList: []
+      cardList: [],
+      id: Date.now()
     }
 
   }
 
+  setLocalStorage(idea){
+
+    localStorage.setItem(this.state.id, JSON.stringify(idea));
+  }
+
   addCard = (card) => {
 
-    const newCard = {...card, id: Date.now()}
+    const newCard = {...card}
 
     this.setState({
-      cardList: [...this.state.cardList, newCard]
+      cardList: [newCard, ...this.state.cardList]
     })
+
+    this.setState({
+      id: Date.now()
+    })
+
+    this.setLocalStorage(newCard);
   }
+
+
+  //
+  // getLocalStorage(){
+  //
+  // }
+  //
+  // componentDidMount(){
+  //
+  //   getLocalStorage();
+  //
+  //
+  // }
 
   render() {
 

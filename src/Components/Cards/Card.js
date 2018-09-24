@@ -8,7 +8,6 @@ export default class Card extends Component{
     this.state = {
       title: '',
       description: '',
-      key: Date.now()
     }
   }
 
