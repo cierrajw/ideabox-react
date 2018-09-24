@@ -1,15 +1,19 @@
 import React from 'react';
 import Card from '../Cards/Card';
 
-const CardContainer = (props) => {
 
-  const Cards = props.cardList.map(card => <Card {...card} deleteCard={props.deleteCard}/>)
+  const getCards = (cards, deleteCard) => {
+    return cards.map((card, deleteCard) => {
+      return(<Card {...card} deleteCard={(id) => this.deleteCard(id)}/>)
+    })
+  }
 
-  return(
-    <div className="CardContainer">
-      { Cards }
-    </div>
-  )
-}
+  const CardContainer = ({cards, deleteCard}) => {
+    return (
+      <div>
+      {getCards(cards, deleteCard)}
+      </div>
+    )
+  }
 
 export default CardContainer;

@@ -67,7 +67,7 @@ class App extends Component {
 
         <AddCard addCard={this.addCard} cardList={this.state.cardList} deleteCard={this.deleteCard} cardAdded={this.state.cardAdded}/>
         <Search />
-        <CardContainer cardList={this.state.cardList} deleteCard={this.deleteCard}/>
+        <CardContainer cards={this.state.cardList} deleteCard={(id) => this.deleteCard(id)}/>
 
       </div>
     );
