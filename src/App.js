@@ -5,19 +5,23 @@ import Search from './Components/Search/Search';
 import CardContainer from './Components/CardContainer/CardContainer';
 import './App.css';
 
+
+
 class App extends Component {
   constructor(){
     super();
 
     this.state = {
       cardList: [],
+      cardAdded: false,
+      cardShowing: false
     }
 
   }
 
   addCard = (card) => {
 
-    const newCard = {...card, id: Date.now()}
+    const newCard = {...card, id: Date.now()};
 
     this.setState({
       cardList: [newCard, ...this.state.cardList]
@@ -25,13 +29,21 @@ class App extends Component {
 
     let stringifiedIdea = this.setLocalStorage(newCard);
 
-    // localStorage.getItem(stringifiedIdea)
+    let retrievedIdea = JSON.parse(localStorage.getItem(stringifiedIdea));
 
   }
 
-  setLocalStorage(idea){
+  deleteCard(card){
 
-    let stringifiedIdea = localStorage.setItem(idea.id, JSON.stringify(idea));
+    console.log("delete the cardddd")
+
+  }
+
+  setLocalStorage(newCard){
+
+    let stringifiedIdea = localStorage.setItem(newCard.id, JSON.stringify(newCard));
+
+    return stringifiedIdea;
 
   }
 
@@ -53,9 +65,9 @@ class App extends Component {
     return (
       <div className="App">
 
-        <AddCard addCard={this.addCard}/>
+        <AddCard addCard={this.addCard} cardList={this.state.cardList} deleteCard={this.deleteCard} cardAdded={this.state.cardAdded}/>
         <Search />
-        <CardContainer cardList={this.state.cardList}/>
+        <CardContainer cardList={this.state.cardList} deleteCard={this.deleteCard}/>
 
       </div>
     );

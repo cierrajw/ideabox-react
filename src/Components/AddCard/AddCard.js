@@ -11,13 +11,15 @@ export default class AddCard extends Component{
     this.state = {
       title: '',
       description: '',
+      id: Date.now()
     }
-
   }
 
   render(){
     return(
+
       <section className='add-card-info'>
+
       <h1 className="header-title">Idea Box</h1>
         <div className="card-entry-div">
           <input className="title-input" value={this.state.title} placeholder="Title" type="text"
@@ -41,7 +43,8 @@ export default class AddCard extends Component{
           this.props.addCard(this.state)
         }}>Add card</button>
 
-        {this.state.cardAdded ? <Card title={this.state.title} description={this.state.description}/> : null}
+        {this.props.cardAdded ? <Card card={this.state} title={this.props.title} description={this.props.description} id={this.props.id} deleteCard={this.props.deleteCard}/> : null}
+
 
       </section>
 

@@ -1,6 +1,6 @@
 
 .card-article{
-  margin: 150px auto 10px auto;
+  margin: 50px auto 10px auto;
   background-color: #d0e0df;
   width: 40rem;
   height: 20rem;
@@ -11,6 +11,16 @@
 .title-text, .description-text{
   margin-left: 25%;
   margin-right: 3rem;
+}
+
+.delete-button{
+  text-align: left;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.delete-button:hover{
+  cursor: pointer;
 }
 
 .info-section{
