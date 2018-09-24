@@ -11,7 +11,6 @@ export default class AddCard extends Component{
     this.state = {
       title: '',
       description: '',
-      id: Date.now(),
     }
 
   }
