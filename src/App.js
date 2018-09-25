@@ -27,9 +27,9 @@ class App extends Component {
       cardList: [newCard, ...this.state.cardList]
     })
 
-    // let stringifiedIdea = this.setLocalStorage(newCard);
-    //
-    // let retrievedIdea = JSON.parse(localStorage.getItem(stringifiedIdea));
+    let stringifiedIdea = this.setLocalStorage(newCard);
+
+    let retrievedIdea = JSON.parse(localStorage.getItem(stringifiedIdea));
 
   }
 
@@ -49,11 +49,11 @@ class App extends Component {
 
   }
 
-  // setLocalStorage(newCard){
-  //
-  //   let stringifiedIdea = localStorage.setItem(newCard.id, JSON.stringify(newCard));
-  //
-  // }
+  setLocalStorage(newCard){
+
+    let stringifiedIdea = localStorage.setItem(newCard.cardID, JSON.stringify(newCard));
+
+  }
 
   // getLocalStorage(stringifiedIdea){
   //   for(var i = 0; localStorage.length; i++){
