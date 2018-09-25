@@ -21,25 +21,26 @@ class App extends Component {
 
   addCard = (card) => {
 
-    const newCard = {...card, id: Date.now()};
+    const newCard = {...card, cardID: Date.now()};
 
     this.setState({
       cardList: [newCard, ...this.state.cardList]
     })
 
-    let stringifiedIdea = this.setLocalStorage(newCard);
-
-    let retrievedIdea = JSON.parse(localStorage.getItem(stringifiedIdea));
+    // let stringifiedIdea = this.setLocalStorage(newCard);
+    //
+    // let retrievedIdea = JSON.parse(localStorage.getItem(stringifiedIdea));
 
   }
 
-  deleteCard(id){
+  deleteCard = (id) =>{
 
     let cards = this.state.cardList;
 
     let updatedCards = cards.filter(card=>{
-      card.id !== id;
+      return card.cardID !== id;
     })
+
     this.setState({
       cardList: updatedCards
     })
@@ -48,13 +49,11 @@ class App extends Component {
 
   }
 
-  setLocalStorage(newCard){
-
-    let stringifiedIdea = localStorage.setItem(newCard.id, JSON.stringify(newCard));
-
-    return stringifiedIdea;
-
-  }
+  // setLocalStorage(newCard){
+  //
+  //   let stringifiedIdea = localStorage.setItem(newCard.id, JSON.stringify(newCard));
+  //
+  // }
 
   // getLocalStorage(stringifiedIdea){
   //   for(var i = 0; localStorage.length; i++){

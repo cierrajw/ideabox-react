@@ -4,7 +4,7 @@ import Card from '../Cards/Card';
 
   const getCards = (cards, deleteCard) => {
     return cards.map((card, index) => {
-      return(<Card {...card} id={Date.now()} key={index} deleteCard={(id) => deleteCard(id)}/>)
+      return(<Card {...card} id={card.cardID} key={index} deleteCard={(id) => deleteCard(id)}/>)
     })
   }
 
