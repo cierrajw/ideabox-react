@@ -33,9 +33,18 @@ class App extends Component {
 
   }
 
-  deleteCard(card){
+  deleteCard(id){
 
-    console.log("delete the cardddd")
+    let cards = this.state.cardList;
+
+    let updatedCards = cards.filter(card=>{
+      card.id !== id;
+    })
+    this.setState({
+      cardList: updatedCards
+    })
+
+    console.log("HERE IS THE ID:" + id)
 
   }
 

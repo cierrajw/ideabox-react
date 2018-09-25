@@ -4,10 +4,6 @@ import './card.css'
 export default class Card extends Component{
   constructor(){
     super();
-
-    // this.state = {
-    //   card: this.props.card
-    // }
   }
 
 

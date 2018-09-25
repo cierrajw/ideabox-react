@@ -3,8 +3,8 @@ import Card from '../Cards/Card';
 
 
   const getCards = (cards, deleteCard) => {
-    return cards.map((card, deleteCard) => {
-      return(<Card {...card} deleteCard={(id) => this.deleteCard(id)}/>)
+    return cards.map((card, index) => {
+      return(<Card {...card} id={Date.now()} key={index} deleteCard={(id) => deleteCard(id)}/>)
     })
   }
 

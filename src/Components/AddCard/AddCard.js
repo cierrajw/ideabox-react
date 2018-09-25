@@ -43,7 +43,7 @@ export default class AddCard extends Component{
           this.props.addCard(this.state)
         }}>Add card</button>
 
-        {this.props.cardAdded ? <Card card={this.state} title={this.props.title} description={this.props.description} id={this.props.id} deleteCard={this.props.deleteCard}/> : null}
+        {this.props.cardAdded ? <Card title={this.props.title} description={this.props.description}/> : null}
 
 
       </section>
